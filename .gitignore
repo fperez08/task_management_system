@@ -10,3 +10,6 @@
 !.yarn/cache
 #.pnp.*
 .editorconfig
+dist/*
+package-lock.json
+node_modules
