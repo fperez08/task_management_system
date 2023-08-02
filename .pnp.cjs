@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@faker-js/faker", "npm:8.0.2"],\
             ["@types/mocha", "npm:10.0.1"],\
             ["@types/sqlite3", "npm:3.1.8"],\
             ["@typescript-eslint/eslint-plugin", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
@@ -107,6 +108,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@eslint-js-npm-8.44.0-66b473d41b-fc53958322.zip/node_modules/@eslint/js/",\
           "packageDependencies": [\
             ["@eslint/js", "npm:8.44.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@faker-js/faker", [\
+        ["npm:8.0.2", {\
+          "packageLocation": "./.yarn/cache/@faker-js-faker-npm-8.0.2-093b9ec0b2-cf73daf9a5.zip/node_modules/@faker-js/faker/",\
+          "packageDependencies": [\
+            ["@faker-js/faker", "npm:8.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3020,6 +3030,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["task_management_system", "workspace:."],\
+            ["@faker-js/faker", "npm:8.0.2"],\
             ["@types/mocha", "npm:10.0.1"],\
             ["@types/sqlite3", "npm:3.1.8"],\
             ["@typescript-eslint/eslint-plugin", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
