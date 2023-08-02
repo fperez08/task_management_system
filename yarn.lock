@@ -203,6 +203,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mocha@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "@types/mocha@npm:10.0.1"
+  checksum: 224ea9fce7b1734ccdb9aa99a622d902a538ce1847bca7fd22c5fb38adcf3ed536f50f48f587085db988a4bb3c2eb68f4b98e1cd6a38bc5547bd3bbbedc54495
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 20.4.2
   resolution: "@types/node@npm:20.4.2"
@@ -2527,6 +2534,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "task_management_system@workspace:."
   dependencies:
+    "@types/mocha": ^10.0.1
     "@types/sqlite3": ^3.1.8
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.0.0

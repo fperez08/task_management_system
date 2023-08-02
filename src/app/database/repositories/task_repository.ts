@@ -2,8 +2,8 @@ import sqlite3 from "sqlite3";
 class TaskRepository {
   private db: sqlite3.Database;
 
-  constructor() {
-    this.db = new sqlite3.Database("task_manager_system.db");
+  constructor(databaseName: string) {
+    this.db = new sqlite3.Database(databaseName);
     this.createTable();
   }
 
