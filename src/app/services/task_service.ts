@@ -6,7 +6,7 @@ class TaskService {
     this.repo = taskRepo;
   }
 
-  public getAllTasks(): Promise<unknown[]> {
+  public getAllTasks(): Promise<Task[]> {
     return this.repo.getAll();
   }
 

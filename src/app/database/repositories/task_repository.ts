@@ -38,7 +38,7 @@ class TaskRepository {
     return new Promise((resolve, reject) => {
       this.db.run(query, values, function (error) {
         if (error) reject(error);
-        const id = this.lastID || 1;
+        const id = this?.lastID || 1;
         resolve(id);
       });
     });
