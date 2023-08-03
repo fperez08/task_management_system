@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@faker-js/faker", "npm:8.0.2"],\
+            ["@types/chai", "npm:4.3.5"],\
             ["@types/mocha", "npm:10.0.1"],\
             ["@types/sqlite3", "npm:3.1.8"],\
             ["@typescript-eslint/eslint-plugin", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
@@ -361,6 +362,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@tsconfig-node16-npm-1.0.4-b7cb87d859-2023197859.zip/node_modules/@tsconfig/node16/",\
           "packageDependencies": [\
             ["@tsconfig/node16", "npm:1.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/chai", [\
+        ["npm:4.3.5", {\
+          "packageLocation": "./.yarn/cache/@types-chai-npm-4.3.5-dce79013f2-c8f26a88c6.zip/node_modules/@types/chai/",\
+          "packageDependencies": [\
+            ["@types/chai", "npm:4.3.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3223,6 +3233,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["task_management_system", "workspace:."],\
             ["@faker-js/faker", "npm:8.0.2"],\
+            ["@types/chai", "npm:4.3.5"],\
             ["@types/mocha", "npm:10.0.1"],\
             ["@types/sqlite3", "npm:3.1.8"],\
             ["@typescript-eslint/eslint-plugin", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
