@@ -1,6 +1,7 @@
 import TaskRepository from "../src/app/database/repositories/task_repository";
 import TaskService from "../src/app/services/task_service";
 import { faker } from "@faker-js/faker";
+import { expect } from "chai";
 const fs = require("fs");
 
 describe("Task service Database Operations", () => {
@@ -22,11 +23,14 @@ describe("Task service Database Operations", () => {
     });
   });
 
-  it("should add a task", () => {
-    service.addTask({
+  it("should add a task", async () => {
+    const task = {
       title: faker.hacker.verb(),
       description: faker.hacker.ingverb(),
       due_date: new Date(),
-    });
+    };
+    await service.addTask(task);
+    const tasks = await service.getAllTasks();
+    expect(tasks[0].title).to.be.equal(task.title);
   });
 });
