@@ -19,6 +19,7 @@
   },
   "scripts": {
     "compile": "tsc",
-    "start": "yarn run compile && node ./dist/index.js"
+    "start": "yarn run compile && node ./dist/index.js",
+    "test": "yarn run compile && yarn run mocha"
   }
 }
