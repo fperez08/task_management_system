@@ -13,6 +13,10 @@ class TaskService {
   public addTask(task: Task): Promise<number> {
     return this.repo.add(task);
   }
+
+  public deleteAllTasks():void {
+    this.repo.deleteAll()
+  }
 }
 
 export default TaskService;
