@@ -43,5 +43,17 @@ class TaskRepository {
       });
     });
   }
+
+  public deleteAll():void {
+    const dropTableQuery = 'DELETE FROM tasks';
+    this.db.run(dropTableQuery, (err) => {
+      if (err) {
+        console.error('Error deleting records:', err.message);
+      } else {
+        console.log('All records deleted successfully!');
+    }
+      this.db.close();
+    });
+  }
 }
 export default TaskRepository;

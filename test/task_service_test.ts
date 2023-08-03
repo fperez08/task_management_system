@@ -7,21 +7,15 @@ const fs = require("fs");
 describe("Task service Database Operations", () => {
   let repo: TaskRepository;
   let service: TaskService;
-
+  const databaseName = "test.db"
   before(() => {
-    repo = new TaskRepository("test.db");
+    repo = new TaskRepository(databaseName);
     service = new TaskService(repo);
   });
 
   after(() => {
-    fs.unlink("test.db", (err: any) => {
-      if (err) {
-        console.error("Error deleting the file:", err);
-      } else {
-        console.log("File deleted successfully!");
-      }
-    });
-  });
+    service.deleteAllTasks();
+  })
 
   it("should add a task", async () => {
     const task = {
