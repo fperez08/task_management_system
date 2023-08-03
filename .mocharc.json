@@ -1,0 +1,9 @@
+{
+  "diff": true,
+  "extension": ["js", "cjs", "mjs"],
+  "reporter": "spec",
+  "slow": "75",
+  "timeout": "2000",
+  "recursive": true,
+  "spec": "dist/test/**/*.js"
+}
