@@ -38,8 +38,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn run format", // Format with Prettier
-      "yarn run lint"    // Lint with ESLint
+      "yarn run format",
+      "yarn run lint"
     ]
   }
 }
