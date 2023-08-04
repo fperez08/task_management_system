@@ -13,6 +13,8 @@
     "eslint-plugin-chai-friendly": "^0.7.2",
     "eslint-plugin-mocha": "^10.1.0",
     "fast-check": "^3.12.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "mocha": "^10.2.0",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
@@ -25,6 +27,19 @@
     "clean": "rm -rf dist",
     "compile": "yarn run clean && tsc",
     "start": "yarn run compile && node ./dist/index.js",
-    "test": "yarn run compile && yarn run mocha"
+    "test": "yarn run compile && yarn run mocha",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  }
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn run format", // Format with Prettier
+      "yarn run lint"    // Lint with ESLint
+    ]
   }
 }
