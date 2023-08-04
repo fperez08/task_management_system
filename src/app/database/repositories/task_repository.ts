@@ -55,5 +55,15 @@ class TaskRepository {
       this.db.close();
     });
   }
+
+  public getById(id:number): Promise<Task> {
+    return new Promise((resolve, reject) => {
+      const query = "SELECT * FROM tasks WHERE id = ?";
+      this.db.get(query, [id], (error:Error, row: Task) => {
+        if (error) reject(error);
+        resolve(row);
+      });
+    });
+  }
 }
 export default TaskRepository;

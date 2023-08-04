@@ -1167,6 +1167,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-check@npm:^3.12.0":
+  version: 3.12.0
+  resolution: "fast-check@npm:3.12.0"
+  dependencies:
+    pure-rand: ^6.0.0
+  checksum: 3ac61af9344731ebf63ae52c6a211bbcd8497fc2d030b980d96e4caeb04d47592a864db9085669e8b683684cf45d9bc7bf8a6dfb995367d4ef2c87bf5122e088
+  languageName: node
+  linkType: hard
+
 "fast-deep-equal@npm:^3.1.1, fast-deep-equal@npm:^3.1.3":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
@@ -2358,6 +2367,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pure-rand@npm:^6.0.0":
+  version: 6.0.2
+  resolution: "pure-rand@npm:6.0.2"
+  checksum: 79de33876a4f515d759c48e98d00756bbd916b4ea260cc572d7adfa4b62cace9952e89f0241d0410214554503d25061140fe325c66f845213d2b1728ba8d413e
+  languageName: node
+  linkType: hard
+
 "queue-microtask@npm:^1.2.2":
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
@@ -2715,6 +2731,7 @@ __metadata:
     eslint: ^8.45.0
     eslint-plugin-chai-friendly: ^0.7.2
     eslint-plugin-mocha: ^10.1.0
+    fast-check: ^3.12.0
     mocha: ^10.2.0
     prettier: ^3.0.0
     sqlite3: ^5.1.6
