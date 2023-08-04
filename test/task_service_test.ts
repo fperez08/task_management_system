@@ -1,30 +1,31 @@
 import TaskRepository from "../src/app/database/repositories/task_repository";
 import TaskService from "../src/app/services/task_service";
-import { faker } from "@faker-js/faker";
 import { expect } from "chai";
-const fs = require("fs");
+import fc from "fast-check"
 
-describe("Task service Database Operations", () => {
+describe("Task service Database Operations", function () {
   let repo: TaskRepository;
   let service: TaskService;
   const databaseName = "test.db"
-  before(() => {
+  before(function (){
     repo = new TaskRepository(databaseName);
     service = new TaskService(repo);
   });
 
-  after(() => {
+  after(function () {
     service.deleteAllTasks();
   })
 
-  it("should add a task", async () => {
-    const task = {
-      title: faker.hacker.verb(),
-      description: faker.hacker.ingverb(),
-      due_date: new Date(),
-    };
-    await service.addTask(task);
-    const tasks = await service.getAllTasks();
-    expect(tasks[0].title).to.be.equal(task.title);
+  it("should add a task", async function () {
+    const property = fc.asyncProperty(fc.record({
+      title:fc.string(),
+      description:fc.string(),
+      due_date:fc.date(),
+    }), async (task) => {
+      const id = await service.addTask(task);
+      const savedTask = await service.getTask(id);
+      expect(savedTask.title).to.be.equal(task.title);
+    })
+    await fc.assert(property)
   });
 });

@@ -15,7 +15,11 @@ class TaskService {
   }
 
   public deleteAllTasks():void {
-    this.repo.deleteAll()
+    this.repo.deleteAll();
+  }
+
+  public getTask(id:number):Promise<Task> {
+    return this.repo.getById(id);
   }
 }
 
