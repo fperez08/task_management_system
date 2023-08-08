@@ -6,7 +6,7 @@ import fc from "fast-check"
 describe("Task service Database Operations", function () {
   let repo: TaskRepository;
   let service: TaskService;
-  const databaseName = "test.db"
+  const databaseName = "task_manager_system.db"
   before(function (){
     repo = new TaskRepository(databaseName);
     service = new TaskService(repo);

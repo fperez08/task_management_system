@@ -30,7 +30,7 @@
     "test": "yarn run compile && yarn run mocha",
     "lint": "eslint .",
     "format": "prettier --write ."
-  }
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
