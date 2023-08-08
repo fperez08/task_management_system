@@ -1,11 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "chai-friendly",
-    "mocha"
-  ],
+  "plugins": ["@typescript-eslint", "chai-friendly", "mocha"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
