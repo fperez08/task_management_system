@@ -22,6 +22,7 @@ describe("Task service Database Operations", function () {
         title: fc.string(),
         description: fc.string(),
         due_date: fc.date(),
+        is_completed: fc.constantFrom(0,1)
       }),
       async (task) => {
         const id = await service.addTask(task);
