@@ -14,12 +14,16 @@ class TaskService {
     return this.repo.add(task);
   }
 
-  public deleteAllTasks():void {
+  public deleteAllTasks(): void {
     this.repo.deleteAll();
   }
 
-  public getTask(id:number):Promise<Task> {
+  public getTask(id: number): Promise<Task> {
     return this.repo.getById(id);
+  }
+
+  public getTaskByStatus(status: number): Promise<Task> {
+    return this.repo.getByStatus(status);
   }
 }
 

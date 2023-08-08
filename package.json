@@ -29,7 +29,8 @@
     "start": "yarn run compile && node ./dist/index.js",
     "test": "yarn run compile && yarn run mocha",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "pretest": "yarn run format"
   },
   "husky": {
     "hooks": {
