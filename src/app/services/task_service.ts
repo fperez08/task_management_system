@@ -22,7 +22,7 @@ class TaskService {
     return this.repo.getById(id);
   }
 
-  public getTaskByStatus(status: number): Promise<Task> {
+  public getTaskByStatus(status: number): Promise<Task[]> {
     return this.repo.getByStatus(status);
   }
 }
