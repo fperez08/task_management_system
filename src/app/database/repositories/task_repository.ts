@@ -67,12 +67,12 @@ class TaskRepository {
     });
   }
 
-  public getByStatus(status: number): Promise<Task> {
+  public getByStatus(status: number): Promise<Task[]> {
     return new Promise((resolve, reject) => {
       const query = "SELECT * FROM tasks WHERE is_completed = ?";
-      this.db.get(query, [status], (error: Error, row: Task) => {
+      this.db.all(query, [status], (error: Error, rows: Task[]) => {
         if (error) reject(error);
-        resolve(row);
+        resolve(rows);
       });
     });
   }
