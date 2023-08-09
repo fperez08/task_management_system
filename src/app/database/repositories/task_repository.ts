@@ -32,10 +32,15 @@ class TaskRepository {
 
   public add(task: Task): Promise<number> {
     const query = `
-      INSERT INTO tasks (title, description, due_date)
-      values(?, ?, ?)
+      INSERT INTO tasks (title, description, due_date, is_completed)
+      values(?, ?, ?, ?)
     `;
-    const values = [task.title, task.description, task.due_date];
+    const values = [
+      task.title,
+      task.description,
+      task.due_date,
+      task.is_completed,
+    ];
     return new Promise((resolve, reject) => {
       this.db.run(query, values, function (error: Error) {
         if (error) reject(error);

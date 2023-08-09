@@ -39,12 +39,11 @@ describe("Task service Database Operations", function () {
       title: faker.hacker.verb(),
       description: faker.hacker.ingverb(),
       due_date: new Date(),
-      is_completed: faker.number.int({ min: 0, max: 1 }),
+      is_completed: faker.helpers.arrayElement([0, 1]),
     };
     const status = task.is_completed;
     await service.addTask(task);
     const tasks = await service.getTaskByStatus(status);
-
     expect(tasks.map((t) => t.is_completed)).to.include(status);
   });
 });
