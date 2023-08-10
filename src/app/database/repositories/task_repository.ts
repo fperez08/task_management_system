@@ -81,5 +81,27 @@ class TaskRepository {
       });
     });
   }
+
+  public update(task: Task): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      const query = `
+      UPDATE tasks
+      SET title = ?,
+      SET description = ?,
+      SET due_date = ?,
+      SET is_completed = ?
+      WHERE id = ?
+      `;
+      const { title, description, due_date, is_completed, id } = task;
+      this.db.run(
+        query,
+        [title, description, due_date, is_completed, id],
+        (error: Error) => {
+          if (error) reject(error);
+          resolve(true);
+        },
+      );
+    });
+  }
 }
 export default TaskRepository;
