@@ -25,6 +25,10 @@ class TaskService {
   public getTaskByStatus(status: number): Promise<Task[]> {
     return this.repo.getByStatus(status);
   }
+
+  public updateTask(task: Task): Promise<boolean> {
+    return this.repo.update(task);
+  }
 }
 
 export default TaskService;
