@@ -7,7 +7,7 @@ import { faker } from "@faker-js/faker";
 describe("Task service Database Operations", function () {
   let repo: TaskRepository;
   let service: TaskService;
-  const databaseName = "task_manager_system.db";
+  const databaseName = "test.db";
   before(function () {
     repo = new TaskRepository(databaseName);
     service = new TaskService(repo);
@@ -45,5 +45,27 @@ describe("Task service Database Operations", function () {
     await service.addTask(task);
     const tasks = await service.getTaskByStatus(status);
     expect(tasks.map((t) => t.is_completed)).to.include(status);
+  });
+
+  it("should update a task", async function () {
+    const task = {
+      title: faker.hacker.verb(),
+      description: faker.hacker.ingverb(),
+      due_date: new Date(),
+      is_completed: faker.helpers.arrayElement([0, 1]),
+    };
+    const newTask = {
+      title: faker.hacker.verb(),
+      description: faker.hacker.ingverb(),
+      due_date: new Date(),
+      is_completed: faker.helpers.arrayElement([0, 1]),
+    };
+
+    const id = await service.addTask(task);
+    const result = await service.updateTask(id, newTask);
+    const updatedTask = await service.getTask(id);
+
+    expect(result).to.equal(true);
+    expect(updatedTask.title).to.equal(newTask.title);
   });
 });
