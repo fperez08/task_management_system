@@ -26,8 +26,12 @@ class TaskService {
     return this.repo.getByStatus(status);
   }
 
-  public updateTask(id: number, task: Task): Promise<boolean> {
-    return this.repo.update(id, task);
+  public updateTask(
+    id: number,
+    columnName: string,
+    value: string | Date | number,
+  ): Promise<boolean> {
+    return this.repo.update(id, columnName, value);
   }
 }
 

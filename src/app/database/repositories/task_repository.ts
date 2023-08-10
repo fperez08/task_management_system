@@ -11,6 +11,7 @@ class TaskRepository {
     const createTableQuery = `
     CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user TEXT,
         title TEXT,
         description TEXT,
         due_date DATE,
@@ -31,11 +32,13 @@ class TaskRepository {
   }
 
   public add(task: Task): Promise<number> {
+    if (!task.user) task.user = "unassigned";
     const query = `
-      INSERT INTO tasks (title, description, due_date, is_completed)
-      values(?, ?, ?, ?)
+      INSERT INTO tasks (user, title, description, due_date, is_completed)
+      values(?, ?, ?, ?, ?)
     `;
     const values = [
+      task.user,
       task.title,
       task.description,
       task.due_date,
@@ -82,22 +85,21 @@ class TaskRepository {
     });
   }
 
-  public update(id: number, task: Task): Promise<boolean> {
+  public update(
+    id: number,
+    columnName: string,
+    value: string | Date | number,
+  ): Promise<boolean> {
     return new Promise((resolve, reject) => {
       const query = `
       UPDATE tasks
-      SET title = ?, description = ?, due_date = ?, is_completed = ?
+      SET ${columnName} = ?
       WHERE id = ?
       `;
-      const { title, description, due_date, is_completed } = task;
-      this.db.run(
-        query,
-        [title, description, due_date, is_completed, id],
-        (error: Error) => {
-          if (error) reject(error);
-          resolve(true);
-        },
-      );
+      this.db.run(query, [value, id], (error: Error) => {
+        if (error) reject(error);
+        resolve(true);
+      });
     });
   }
 }

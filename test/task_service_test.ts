@@ -4,13 +4,35 @@ import { expect } from "chai";
 import fc from "fast-check";
 import { faker } from "@faker-js/faker";
 
-describe("Task service Database Operations", function () {
+describe("Task Service Database Operations", function () {
   let repo: TaskRepository;
   let service: TaskService;
+  let status: number;
+  let id: number;
+  let user: string;
+  let title: string;
+  let description: string;
+  let due_date: Date;
+  let is_completed: number;
   const databaseName = "test.db";
-  before(function () {
+
+  before(async function () {
     repo = new TaskRepository(databaseName);
     service = new TaskService(repo);
+    const task = {
+      title: faker.hacker.verb(),
+      description: faker.hacker.ingverb(),
+      due_date: new Date(),
+      is_completed: faker.helpers.arrayElement([0, 1]),
+    };
+    user = faker.internet.userName();
+    title = faker.hacker.verb();
+    description = faker.hacker.ingverb();
+    due_date = new Date();
+    is_completed = faker.helpers.arrayElement([0, 1]);
+
+    status = task.is_completed;
+    id = await service.addTask(task);
   });
 
   after(function () {
@@ -35,37 +57,48 @@ describe("Task service Database Operations", function () {
   });
 
   it("should get a task by status", async function () {
-    const task = {
-      title: faker.hacker.verb(),
-      description: faker.hacker.ingverb(),
-      due_date: new Date(),
-      is_completed: faker.helpers.arrayElement([0, 1]),
-    };
-    const status = task.is_completed;
-    await service.addTask(task);
     const tasks = await service.getTaskByStatus(status);
     expect(tasks.map((t) => t.is_completed)).to.include(status);
   });
 
-  it("should update a task", async function () {
-    const task = {
-      title: faker.hacker.verb(),
-      description: faker.hacker.ingverb(),
-      due_date: new Date(),
-      is_completed: faker.helpers.arrayElement([0, 1]),
-    };
-    const newTask = {
-      title: faker.hacker.verb(),
-      description: faker.hacker.ingverb(),
-      due_date: new Date(),
-      is_completed: faker.helpers.arrayElement([0, 1]),
-    };
-
-    const id = await service.addTask(task);
-    const result = await service.updateTask(id, newTask);
+  it("should update task user", async function () {
+    const result = await service.updateTask(id, "user", user);
     const updatedTask = await service.getTask(id);
 
     expect(result).to.equal(true);
-    expect(updatedTask.title).to.equal(newTask.title);
+    expect(updatedTask.user).to.equal(user);
+  });
+
+  it("should update task title", async function () {
+    const result = await service.updateTask(id, "title", title);
+    const updatedTask = await service.getTask(id);
+
+    expect(result).to.equal(true);
+    expect(updatedTask.title).to.equal(title);
+  });
+
+  it("should update task description", async function () {
+    const result = await service.updateTask(id, "description", description);
+    const updatedTask = await service.getTask(id);
+
+    expect(result).to.equal(true);
+    expect(updatedTask.description).to.equal(description);
+  });
+
+  it("should update task due_date", async function () {
+    const result = await service.updateTask(id, "due_date", due_date);
+    const updatedTask = await service.getTask(id);
+    const taskDate = new Date(updatedTask.due_date).toString();
+
+    expect(result).to.equal(true);
+    expect(taskDate).to.equal(due_date.toString());
+  });
+
+  it("should update task is_completed", async function () {
+    const result = await service.updateTask(id, "is_completed", is_completed);
+    const updatedTask = await service.getTask(id);
+
+    expect(result).to.equal(true);
+    expect(updatedTask.is_completed).to.equal(is_completed);
   });
 });
