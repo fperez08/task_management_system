@@ -82,17 +82,14 @@ class TaskRepository {
     });
   }
 
-  public update(task: Task): Promise<boolean> {
+  public update(id: number, task: Task): Promise<boolean> {
     return new Promise((resolve, reject) => {
       const query = `
       UPDATE tasks
-      SET title = ?,
-      SET description = ?,
-      SET due_date = ?,
-      SET is_completed = ?
+      SET title = ?, description = ?, due_date = ?, is_completed = ?
       WHERE id = ?
       `;
-      const { title, description, due_date, is_completed, id } = task;
+      const { title, description, due_date, is_completed } = task;
       this.db.run(
         query,
         [title, description, due_date, is_completed, id],
