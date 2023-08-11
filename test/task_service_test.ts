@@ -106,4 +106,12 @@ describe("Task Service Database Operations", function () {
     expect(result).to.equal(true);
     expect(updatedTask.is_completed).to.equal(is_completed);
   });
+
+  it("should retrieve a task completed", async function () {
+    const result = await service.updateTask(id, "is_completed", is_completed);
+    const updatedTask = await service.getTask(id);
+
+    expect(result).to.equal(true);
+    expect(updatedTask.is_completed).to.equal(is_completed);
+  });
 });
