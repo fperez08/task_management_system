@@ -56,6 +56,11 @@ describe("Task Service Database Operations", function () {
     await fc.assert(property);
   });
 
+  it("should be a task with unassiged user", async function () {
+    const task = await service.getTask(id);
+    expect(task.user).to.equal("unassigned");
+  });
+
   it("should get a task by status", async function () {
     const tasks = await service.getTaskByStatus(status);
     expect(tasks.map((t) => t.is_completed)).to.include(status);
