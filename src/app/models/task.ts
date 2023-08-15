@@ -4,6 +4,6 @@ interface Task {
   user?: string;
   title: string;
   description: string;
-  due_date: Date;
+  due_date: Date | number;
   is_completed: number;
 }

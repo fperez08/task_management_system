@@ -1,4 +1,5 @@
 import sqlite3 from "sqlite3";
+import { isOverDueDate } from "../../utils/date_utils";
 class TaskRepository {
   private db: sqlite3.Database;
 
@@ -101,6 +102,11 @@ class TaskRepository {
         resolve(true);
       });
     });
+  }
+
+  public async getOverdue(): Promise<Task[]> {
+    const tasks = await this.getAll();
+    return tasks.filter((task) => isOverDueDate(task.due_date));
   }
 }
 export default TaskRepository;

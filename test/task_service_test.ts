@@ -3,6 +3,7 @@ import TaskService from "../src/app/services/task_service";
 import { expect } from "chai";
 import fc from "fast-check";
 import { faker } from "@faker-js/faker";
+import { isOverDueDate } from "../src/app/utils/date_utils";
 
 describe("Task Service Database Operations", function () {
   let repo: TaskRepository;
@@ -107,11 +108,15 @@ describe("Task Service Database Operations", function () {
     expect(updatedTask.is_completed).to.equal(is_completed);
   });
 
-  it("should retrieve a task completed", async function () {
-    const result = await service.updateTask(id, "is_completed", is_completed);
-    const updatedTask = await service.getTask(id);
-
-    expect(result).to.equal(true);
-    expect(updatedTask.is_completed).to.equal(is_completed);
+  it("should retrieve overdue tasks", async function () {
+    const task = {
+      title: faker.hacker.verb(),
+      description: faker.hacker.ingverb(),
+      due_date: new Date("2022-05-15"),
+      is_completed: faker.helpers.arrayElement([0, 1]),
+    };
+    await service.addTask(task);
+    const tasks = await service.getOverdueTasks();
+    expect(isOverDueDate(tasks[0].due_date)).to.be.true;
   });
 });
