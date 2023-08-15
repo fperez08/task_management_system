@@ -33,6 +33,10 @@ class TaskService {
   ): Promise<boolean> {
     return this.repo.update(id, columnName, value);
   }
+
+  public getOverdueTasks(): Promise<Task[]> {
+    return this.repo.getOverdue();
+  }
 }
 
 export default TaskService;
