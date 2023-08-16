@@ -29,11 +29,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@faker-js/faker", "npm:8.0.2"],\
+            ["@types/blessed", "npm:0.1.22"],\
             ["@types/chai", "npm:4.3.5"],\
             ["@types/mocha", "npm:10.0.1"],\
             ["@types/sqlite3", "npm:3.1.8"],\
             ["@typescript-eslint/eslint-plugin", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
             ["@typescript-eslint/parser", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
+            ["blessed", "npm:0.1.81"],\
             ["chai", "npm:4.3.7"],\
             ["eslint", "npm:8.45.0"],\
             ["eslint-plugin-chai-friendly", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:0.7.2"],\
@@ -366,6 +368,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@tsconfig-node16-npm-1.0.4-b7cb87d859-2023197859.zip/node_modules/@tsconfig/node16/",\
           "packageDependencies": [\
             ["@tsconfig/node16", "npm:1.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/blessed", [\
+        ["npm:0.1.22", {\
+          "packageLocation": "./.yarn/cache/@types-blessed-npm-0.1.22-6bb93f1423-833e915305.zip/node_modules/@types/blessed/",\
+          "packageDependencies": [\
+            ["@types/blessed", "npm:0.1.22"],\
+            ["@types/node", "npm:20.4.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -885,6 +897,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/binary-extensions-npm-2.2.0-180c33fec7-ccd267956c.zip/node_modules/binary-extensions/",\
           "packageDependencies": [\
             ["binary-extensions", "npm:2.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["blessed", [\
+        ["npm:0.1.81", {\
+          "packageLocation": "./.yarn/cache/blessed-npm-0.1.81-7da02fe8f4-a8f96978cc.zip/node_modules/blessed/",\
+          "packageDependencies": [\
+            ["blessed", "npm:0.1.81"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3631,11 +3652,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["task_management_system", "workspace:."],\
             ["@faker-js/faker", "npm:8.0.2"],\
+            ["@types/blessed", "npm:0.1.22"],\
             ["@types/chai", "npm:4.3.5"],\
             ["@types/mocha", "npm:10.0.1"],\
             ["@types/sqlite3", "npm:3.1.8"],\
             ["@typescript-eslint/eslint-plugin", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
             ["@typescript-eslint/parser", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:6.0.0"],\
+            ["blessed", "npm:0.1.81"],\
             ["chai", "npm:4.3.7"],\
             ["eslint", "npm:8.45.0"],\
             ["eslint-plugin-chai-friendly", "virtual:e02948f766be5b5997f99b5b50fadc081fae1c01b63e62cf63804e7e8f1c52c54afbea4bdeed264d02d88db0be74a5663382fe95ca8e6d6eea7431fdbc2075c2#npm:0.7.2"],\
