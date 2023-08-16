@@ -264,6 +264,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/blessed@npm:^0.1.22":
+  version: 0.1.22
+  resolution: "@types/blessed@npm:0.1.22"
+  dependencies:
+    "@types/node": "*"
+  checksum: 833e915305c80f0edae3856c4c907485bc4f4e7f372344b4d9a133ab4b31821e6371eb1107fb4b4efb20494e0c414c1561dd98cabe520949ce2602258778f96f
+  languageName: node
+  linkType: hard
+
 "@types/chai@npm:^4.3.5":
   version: 4.3.5
   resolution: "@types/chai@npm:4.3.5"
@@ -636,6 +645,15 @@ __metadata:
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
   checksum: ccd267956c58d2315f5d3ea6757cf09863c5fc703e50fbeb13a7dc849b812ef76e3cf9ca8f35a0c48498776a7478d7b4a0418e1e2b8cb9cb9731f2922aaad7f8
+  languageName: node
+  linkType: hard
+
+"blessed@npm:^0.1.81":
+  version: 0.1.81
+  resolution: "blessed@npm:0.1.81"
+  bin:
+    blessed: ./bin/tput.js
+  checksum: a8f96978cc8e3e5ac887c43df8523074ba4352b9a055d8b078c60ae1f9f62837c9eb620e5fc78ccbb005119167234fcf788915a16428c1c397a7fbf9f630b42c
   languageName: node
   linkType: hard
 
@@ -3057,11 +3075,13 @@ __metadata:
   resolution: "task_management_system@workspace:."
   dependencies:
     "@faker-js/faker": ^8.0.2
+    "@types/blessed": ^0.1.22
     "@types/chai": ^4.3.5
     "@types/mocha": ^10.0.1
     "@types/sqlite3": ^3.1.8
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.0.0
+    blessed: ^0.1.81
     chai: ^4.3.7
     eslint: ^8.45.0
     eslint-plugin-chai-friendly: ^0.7.2
