@@ -3,7 +3,6 @@
   "packageManager": "yarn@3.6.1",
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@types/blessed": "^0.1.22",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "@types/sqlite3": "^3.1.8",
@@ -23,7 +22,6 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "blessed": "^0.1.81",
     "sqlite3": "^5.1.6"
   },
   "scripts": {
