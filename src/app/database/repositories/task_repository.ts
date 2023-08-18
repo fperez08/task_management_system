@@ -43,7 +43,7 @@ class TaskRepository {
       task.title,
       task.description,
       task.due_date,
-      task.is_completed,
+      task.is_completed || 0,
     ];
     return new Promise((resolve, reject) => {
       this.db.run(query, values, function (error: Error) {

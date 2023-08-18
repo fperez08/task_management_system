@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@clack/prompts", "npm:0.7.0"],\
             ["@faker-js/faker", "npm:8.0.2"],\
             ["@types/chai", "npm:4.3.5"],\
             ["@types/mocha", "npm:10.0.1"],\
@@ -56,6 +57,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@aashutoshrathi-word-wrap-npm-1.2.6-5b1d95e487-ada901b9e7.zip/node_modules/@aashutoshrathi/word-wrap/",\
           "packageDependencies": [\
             ["@aashutoshrathi/word-wrap", "npm:1.2.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@clack/core", [\
+        ["npm:0.3.3", {\
+          "packageLocation": "./.yarn/cache/@clack-core-npm-0.3.3-0496845f91-3f04afc391.zip/node_modules/@clack/core/",\
+          "packageDependencies": [\
+            ["@clack/core", "npm:0.3.3"],\
+            ["picocolors", "npm:1.0.0"],\
+            ["sisteransi", "npm:1.0.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@clack/prompts", [\
+        ["npm:0.7.0", {\
+          "packageLocation": "./.yarn/cache/@clack-prompts-npm-0.7.0-68ad1e98c8-3daa526280.zip/node_modules/@clack/prompts/",\
+          "packageDependencies": [\
+            ["@clack/prompts", "npm:0.7.0"],\
+            ["@clack/core", "npm:0.3.3"],\
+            ["is-unicode-supported", "npm:1.3.0"],\
+            ["picocolors", "npm:1.0.0"],\
+            ["sisteransi", "npm:1.0.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2249,6 +2274,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["is-unicode-supported", "npm:0.1.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:1.3.0", {\
+          "packageLocation": "./.yarn/cache/is-unicode-supported-npm-1.3.0-9371ea1eda-20a1fc161a.zip/node_modules/is-unicode-supported/",\
+          "packageDependencies": [\
+            ["is-unicode-supported", "npm:1.3.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["isexe", [\
@@ -3070,6 +3102,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["picocolors", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/picocolors-npm-1.0.0-d81e0b1927-a2e8092dd8.zip/node_modules/picocolors/",\
+          "packageDependencies": [\
+            ["picocolors", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["picomatch", [\
         ["npm:2.3.1", {\
           "packageLocation": "./.yarn/cache/picomatch-npm-2.3.1-c782cfd986-050c865ce8.zip/node_modules/picomatch/",\
@@ -3391,6 +3432,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["sisteransi", [\
+        ["npm:1.0.5", {\
+          "packageLocation": "./.yarn/cache/sisteransi-npm-1.0.5-af60cc0cfa-aba6438f46.zip/node_modules/sisteransi/",\
+          "packageDependencies": [\
+            ["sisteransi", "npm:1.0.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["slash", [\
         ["npm:3.0.0", {\
           "packageLocation": "./.yarn/cache/slash-npm-3.0.0-b87de2279a-94a93fff61.zip/node_modules/slash/",\
@@ -3630,6 +3680,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["task_management_system", "workspace:."],\
+            ["@clack/prompts", "npm:0.7.0"],\
             ["@faker-js/faker", "npm:8.0.2"],\
             ["@types/chai", "npm:4.3.5"],\
             ["@types/mocha", "npm:10.0.1"],\
