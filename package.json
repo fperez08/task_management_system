@@ -22,6 +22,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@clack/prompts": "^0.7.0",
     "sqlite3": "^5.1.6"
   },
   "scripts": {
