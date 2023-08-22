@@ -13,6 +13,6 @@ export function isOverDueDate(dateValue: Date | number): boolean {
   return (
     todayDate.getFullYear() > date.getFullYear() ||
     todayDate.getMonth() > date.getMonth() ||
-    todayDate.getDay() > date.getDate()
+    todayDate.getDay() > date.getDay()
   );
 }
