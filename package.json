@@ -29,6 +29,7 @@
     "clean": "rm -rf dist",
     "compile": "yarn run clean && tsc",
     "start": "yarn run compile && node ./dist/src/app/index.js",
+    "generateData": "yarn run compile && node ./dist/src/app/generate_data.js",
     "test": "yarn run compile && yarn run mocha",
     "postinstall": "husky install",
     "prepack": "pinst --disable",

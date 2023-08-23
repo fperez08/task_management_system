@@ -13,3 +13,4 @@
 dist/*
 package-lock.json
 node_modules
+task_manager_system.db
