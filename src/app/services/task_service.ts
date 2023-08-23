@@ -37,6 +37,10 @@ class TaskService {
   public getOverdueTasks(): Promise<Task[]> {
     return this.repo.getOverdue();
   }
+
+  public deleteTaskById(id: number): void {
+    return this.repo.deleteAllById(id);
+  }
 }
 
 export default TaskService;
