@@ -10,6 +10,7 @@ async function main() {
       { value: "showAllTasks", label: "Show all tasks 🗒️" },
       { value: "findTask", label: "Find a task 🔎" },
       { value: "updateTask", label: "Edit a task 📝" },
+      { value: "deleteTask", label: "Delete a task 🗑️" },
       { value: "exit", label: "Exit ❌" },
     ],
   });
@@ -26,6 +27,9 @@ async function main() {
         break;
       case "updateTask":
         await app.updateTask();
+        break;
+      case "deleteTask":
+        await app.deleteTask();
         break;
       default:
         outro(`Good bye! 👋🏻`);

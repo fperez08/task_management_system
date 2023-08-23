@@ -160,6 +160,12 @@ class App {
     console.log("Task updated succesfully ✅");
   }
 
+  public async deleteTask() {
+    const task = await this.searchTaskById();
+    await this.service.deleteTaskById(task.id as number);
+    console.log("Task deleted succesfully ✅");
+  }
+
   private showTasks(tasks: Task[]) {
     if (tasks.length === 0) {
       console.log("😕 Tasks not found");

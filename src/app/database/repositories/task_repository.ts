@@ -108,5 +108,16 @@ class TaskRepository {
     const tasks = await this.getAll();
     return tasks.filter((task) => isOverDueDate(task.due_date));
   }
+
+  public deleteAllById(id: number): void {
+    const dropTableQuery = "DELETE FROM tasks where id = ?";
+    this.db.run(dropTableQuery, [id], (err: Error) => {
+      if (err) {
+        console.error("Error deleting records:", err.message);
+      } else {
+        console.log("All records deleted successfully!");
+      }
+    });
+  }
 }
 export default TaskRepository;
